@@ -1,3 +1,6 @@
 nodes:
+  vars:
+    ansible_user: ansible
+    ansible_ssh_private_key_file: ~/.ssh/id_ansible
   hosts:
     node-00[1:2]:
