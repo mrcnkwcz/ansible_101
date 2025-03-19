@@ -1,0 +1,11 @@
+---
+- name: Get and show facts from all hosts
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Get facts
+      ansible.builtin.setup:
+
+    - name: Show facts
+      ansible.builtin.debug:
+        var: ansible_facts
