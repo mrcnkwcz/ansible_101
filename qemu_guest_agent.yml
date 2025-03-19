@@ -1,6 +1,7 @@
 ---
 - name: Install QEMU guest agent
   hosts: all
+  become: true
   tasks:
     - name: Install QEMU guest agent
       ansible.builtin.package:
