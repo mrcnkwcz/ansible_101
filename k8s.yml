@@ -2,6 +2,7 @@
 - name: K8s demo
   hosts: localhost
   become: false
+  gather_facts: false
   tasks:
     - name: Create a K8s namespace
       kubernetes.core.k8s:
@@ -10,3 +11,12 @@
         kind: Namespace
         state: present
   
+    - name: Add labels to new K8s namespace
+      kubernetes.core.k8s:
+        name: team-infra
+        kind: Namespace
+        definition:
+          metadata:
+            labels:
+              team: infra
+              env: demo
